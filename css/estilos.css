@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+
+/* seletor curinga: aplica em todos os elementos */
+/* encaixar todos os elementos em 100% */
+* {
+    box-sizing: border-box;
+    transition: color 1s, background-color .5s;
+}
+
+body {
+    /* tipografia padrão da página */
+    font-family: 'Ropa Sans', sans-serif;
+    color: #777777;
+    /* reset CSS do navegador */
+    margin: 0;
+    padding: 0;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme h1,
+.dark-theme h2 {
+    color: #fff;
+}
+
+.dark-theme section.destaques article {
+    background-color: #555;
+}
+
+.dark-theme section .container h2 {
+    color: #fff;
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    /* Padding: Espaçamento Interno
+       Margin: Espaçamento Externo */
+    margin: 0 auto;
+    /* ajustar espaçamento lateral: "respiro" */
+    padding: 0 15px;
+    /* background-color: #e0b6b6; */
+    /* border: espessura, textura, cor */
+    /* border: 5px solid #7c3a3a; */
+    /* margin: 10px; todos os lados */
+    /* margin: 10px 20px; top/bottom, left/right */
+    /* margin: 10px 20px 5px; top, left/right, bottom */
+    /* auto só funciona para laterais no margin */
+}
+
+header {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    margin-top: 10px;
+}
+
+header h1 {
+    color: #777;
+    /* display: inline: não aceita padding */
+    /* display: inline-block: lado a lado na mesma linha */
+    display: inline-block;
+    /* como usei imagem, configuração da font é apenas para seguir a aula */
+    /* é possível verificar o tamanho ideal da fonte pelo Inspetor no navegador */
+    font-size: 40px;
+}
+
+header h2 {
+    color: #777;
+    /* display: inline: não aceita padding */
+    /* display: inline-block: lado a lado na mesma linha */
+    display: inline-block;
+    /* como usei imagem, configuração da font é apenas para seguir a aula */
+    /* é possível verificar o tamanho ideal da fonte pelo Inspetor no navegador */
+    font-size: 16px;
+}
+
+header button.menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* configuração de fonte por ter usado um caracter */
+    font-size: 30px;
+    color: #AAA;
+}
+
+section.banner {
+    margin: 50px 0;
+}
+
+section.banner img.slider {
+    width: 100%;
+}
+
+/* para colocar as setas sobre o carrossel */
+/* elemento pai (carrossel): position: relative; */
+/* elemento filho (setas): position: absolute; */
+section.banner .carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+section.banner .carousel .controls {
+    position: absolute;
+    top: 0;
+    /* background-color: #DC9730; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+section.banner .carousel .controls button {
+    background-color: rgba(141, 141, 141, 0.62);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+}
+/* section destaques */
+
+section.destaques .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+section.destaques article {
+    background-color: #EEEEEE;
+    width: 450px;
+    margin: 30px;
+    text-align: justify;
+}
+
+section.destaques article .thumb {
+    width: 100%;
+    height: 145px;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+section.destaques article .info {
+    padding: 25px;
+}
+
+section.destaques article .info .tag {
+    /* cor de fundo padrão: cinza */
+    background-color: #555;
+    color: #fff;
+    font-size: 27px;
+    padding: 5px 15px;
+    border-radius: 30px;
+}
+
+section.destaques article .info .tag.tag-new {
+    /* cor de fundo personalizada */
+    background-color: #51D275;
+}
+
+section.destaques article .info .tag.tag-sale {
+    /* cor de fundo personalizada */
+    background-color: #DC9730;
+}
+
+section.destaques article .info .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.destaques article .info .details .price {
+    margin: 0;
+    font-size: 27px;
+}
+
+section.styles {
+    margin: 80px 0;
+}
+
+section.styles h2 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 300;
+    color: #888888;
+}
+
+section.styles article {
+    text-align: center;
+    padding: 70px 30px;
+    margin: 20px auto;
+    /* cor de fundo padrão, será sobreposta pelas imagens */
+    background-color: #777;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+section.styles article h3 {
+    background: rgba(196, 196, 196, 0.5);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    letter-spacing: 1px;
+    /* objeto flutua na tela */
+    /* usar position: relative para manter dentro do article */
+    position: absolute;
+    /* posicionar ao topo e à esquerda */
+    top:0;
+    left:0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* contact */
+
+section.contact {
+    padding: 50px 0;
+}
+
+section.contact h2 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 300;
+    color: #888888;
+}
+
+section.contact form {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+section.contact form input,
+section.contact form textarea {
+    width: 100%;
+    padding: 7px;
+    margin: 10px 0;
+    resize: none;
+}
+
+section.contact form button {
+    padding: 10px 20px;
+    background-color: #DC9730;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #333333;
+    color: white;
+    padding: 80px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    /* quebrar linha quando a tela for menor */
+    flex-wrap: wrap;
+}
+
+footer .mapa iframe {
+    width: 600px;
+    /* max-width: redimensionar em dispositivos com telas menores */
+    /* evita scroll */
+    max-width: 100%;
+    height: 300px;
+    border: none;
+    /* borda arredondada */
+    border-radius: 30px;
+}
+
+footer .info a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .info h4,
+footer .info p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+footer .social {
+    /* padding: 20px; */
+    /* width: 30px; */
+    /* margin: 5px; */
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+@media (max-width: 979px) {
+    section.destaques article {
+        width: 350px;
+    }
+}
+
+@media (max-width: 779px) {
+    section.destaques article {
+        width: 100%;
+    }
+}
